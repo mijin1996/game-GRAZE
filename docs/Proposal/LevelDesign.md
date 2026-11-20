@@ -1,6 +1,6 @@
 # 레벨 디자인 — mmain 씬
 
-> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · **레벨 디자인** · [밸런스](Balance.md) · [Suggestions](Suggestions.md)
+> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · **레벨 디자인** · [밸런스](Balance.md) · [needFix](needFix.md)
 
 ---
 
@@ -14,7 +14,7 @@
 | 회전 | `spinPivot` + `Rotator` 1개 (초당 10도) | 씬 |
 | 목표 | 최대한 오래 생존 | `GameManager` |
 
-> 맵의 실제 배치(몬스터 · 건물 위치)는 씬 탑다운 캡처로 넣어 주세요 → [S-14](Suggestions.md)
+> 맵의 실제 배치(몬스터 · 건물 위치)는 씬 탑다운 캡처로 넣어 주세요 → [S-14](needFix.md)
 
 **[구성도] mmain 씬 구성**
 ```mermaid
@@ -93,4 +93,4 @@ z -1.7   x -11.1 ~ 18.1  (오른쪽 = +x, 위 = +z)
 |---|---|---|---|
 | 0초 ~ 게임오버 | 4마리 | 0.5 ~ 3초 랜덤 | 2.29발 |
 
-> 시간에 따라 어려워지는 곡선은 [S-09](Suggestions.md)
+> 시간에 따라 어려워지는 곡선은 [S-09](needFix.md)

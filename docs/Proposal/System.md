@@ -1,6 +1,6 @@
 # 시스템 — 이동 · 회피 · 게임 흐름
 
-> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · **시스템** · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [Suggestions](Suggestions.md)
+> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · **시스템** · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [needFix](needFix.md)
 > 관련 코드: `PlayerInput.cs` · `BulletSpawner.cs` · `Bullet.cs` · `GameManager.cs` · `SceneChange.cs` · `Rotator.cs` · `Editor/Graze*.cs`
 
 ---
@@ -401,21 +401,21 @@ flowchart TB
   classDef bad fill:#A33A33,color:#fff,stroke:#A33A33
   classDef todo fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 주황 = 이런 상황이면? → 초록 ✅ 코드가 이미 처리함 / 빨강 ⚠️ 문제 (괄호 = Suggestions 번호) / 회색 💡 고치면 좋은 점. 아래 표에 같은 번호로 자세히 있어요.
+> 읽는 법: 주황 = 이런 상황이면? → 초록 ✅ 코드가 이미 처리함 / 빨강 ⚠️ 문제 (괄호 = needFix 번호) / 회색 💡 고치면 좋은 점. 아래 표에 같은 번호로 자세히 있어요.
 
 | # | 상황 | 현재 동작 | 상태 |
 |---|---|---|---|
-| 1 | 게임오버 후 몬스터 발사 | 연결된 1마리만 멈추고 나머지 3마리는 계속 발사 | ⚠️ → [S-01](Suggestions.md) |
+| 1 | 게임오버 후 몬스터 발사 | 연결된 1마리만 멈추고 나머지 3마리는 계속 발사 | ⚠️ → [S-01](needFix.md) |
 | 2 | 벽 판정 중 이미 벽에 겹쳐 있음 | 거리 0인 충돌 무시 → 빠져나갈 수 있음 | ✅ |
 | 3 | 낮은 턱 · 바닥 | 0.3m 아래 위쪽 면은 통과 | ✅ |
-| 4 | 높은 지형 위로 점프 | 착지 높이가 "시작 높이"로 고정 → 위에 올라설 수 없음 | ⚠️ → [S-03](Suggestions.md) |
+| 4 | 높은 지형 위로 점프 | 착지 높이가 "시작 높이"로 고정 → 위에 올라설 수 없음 | ⚠️ → [S-03](needFix.md) |
 | 5 | 공중에서 점프 연타 | 무시 (1단) | ✅ |
 | 6 | 조이스틱과 키보드 동시 입력 | 조이스틱 우선 | ✅ |
-| 7 | 게임오버 화면에서 클릭 | 즉시 재시작 | ⚠️ → [S-04](Suggestions.md) |
-| 8 | 같은 프레임에 총알 2발 명중 | `Die()`를 막는 검사 없음 | ⚠️ → [S-05](Suggestions.md) |
-| 9 | 배경 음악 | 이름("Music")으로 찾아서 재생 | ⚠️ → [S-06](Suggestions.md) |
-| 10 | 기록 표시 | 소수점 버림(정수) | → [S-07](Suggestions.md) |
-| 11 | 일시정지 | 기능 없음 | → [S-08](Suggestions.md) |
+| 7 | 게임오버 화면에서 클릭 | 즉시 재시작 | ⚠️ → [S-04](needFix.md) |
+| 8 | 같은 프레임에 총알 2발 명중 | `Die()`를 막는 검사 없음 | ⚠️ → [S-05](needFix.md) |
+| 9 | 배경 음악 | 이름("Music")으로 찾아서 재생 | ⚠️ → [S-06](needFix.md) |
+| 10 | 기록 표시 | 소수점 버림(정수) | → [S-07](needFix.md) |
+| 11 | 일시정지 | 기능 없음 | → [S-08](needFix.md) |
 | 12 | 총알끼리 닿음 | 트리거끼리라 무시 | ✅ |
 
 ## 5. 에디터 자동화 도구

@@ -1,6 +1,6 @@
 # 전투 · 캐릭터 · 몬스터
 
-> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · [시스템](System.md) · **전투·개체** · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [Suggestions](Suggestions.md)
+> 문서 세트: [목차](Proposal.md) · [컨셉](Concept.md) · [시스템](System.md) · **전투·개체** · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [needFix](needFix.md)
 > 모든 값은 `mmain` 씬 · 프리팹에 저장된 실제 값 기준 (코드 기본값과 다르면 함께 표시)
 
 ---

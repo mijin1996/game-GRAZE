@@ -1,6 +1,6 @@
 # 게임 컨셉 — GRAZE
 
-> 문서 세트: [목차](Proposal.md) · **컨셉** · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [Suggestions](Suggestions.md)
+> 문서 세트: [목차](Proposal.md) · **컨셉** · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · [needFix](needFix.md)
 
 ---
 
@@ -113,4 +113,4 @@ flowchart TD
 |---|---|
 | 구현됨 | 조이스틱 + 키보드 이동, 직접 계산한 중력 점프, 벽 막힘 판정, 발소리, 몬스터 발사, 총알 엄폐, 게임오버, 최고 기록, Intro 씬, 맵 회전 |
 | 에디터 도구 | Intro 씬 자동 생성 · 콜라이더 일괄 변환 · 사운드 자동 연결 (`Assets/Scrips/Editor/`) |
-| 다음 할 일 | [Suggestions](Suggestions.md) |
+| 다음 할 일 | [needFix](needFix.md) |
