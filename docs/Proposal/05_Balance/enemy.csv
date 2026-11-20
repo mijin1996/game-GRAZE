@@ -1,0 +1,2 @@
+﻿ID,Name,Count,SpawnRateMin(s),SpawnRateMax(s),AvgInterval(s),BulletsPerSec_Each,BulletsPerSec_All,BulletSpeed,BulletLife(s),BulletRange(m),Status
+ENM_001,총알 몬스터,4,0.5,3,1.75,0.57,2.29,8,3,24,현재 (mmain 씬 4마리)
