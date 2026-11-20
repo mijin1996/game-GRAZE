@@ -41,7 +41,7 @@
   <p class="goal">몬스터가 쏘는 노란 총알을 피해 최대한 오래 버티세요. 한 발이라도 맞으면 끝!</p>
   <div class="key"><kbd>W</kbd> <kbd>A</kbd> <kbd>S</kbd> <kbd>D</kbd> 또는 <kbd>↑</kbd> <kbd>←</kbd> <kbd>↓</kbd> <kbd>→</kbd></div><div>이동</div>
   <div class="key"><kbd>R</kbd> / 화면 클릭</div><div>게임오버 후 다시 시작</div>
-  <p class="tip">💡 빨갛게 깜빡이는 몬스터가 곧 쏴요. 회색 건물 뒤에 숨으면 총알이 막혀요. 키가 안 먹으면 게임 화면을 한 번 클릭하세요.</p>
+  <p class="tip">💡 몬스터는 예고 없이 바로 쏴요 (실제 코드). 회색 건물 뒤에 숨으면 총알이 막혀요. 키가 안 먹으면 게임 화면을 한 번 클릭하세요.</p>
 </section>
 <main>
   <canvas id="cv" width="880" height="600"></canvas>
@@ -59,10 +59,11 @@
     <label class="row">총알 속도 <b id="vSpd">16</b></label><input id="rSpd" type="range" min="4" max="24" step="1" value="16">
     <label class="row">몬스터 수 <b id="vCnt">4</b></label><input id="rCnt" type="range" min="1" max="8" step="1" value="4">
     <h2>제안 기능 켜 보기</h2>
-    <label><input id="cCurve" type="checkbox"> 난이도 곡선 (10초마다 발사 간격 −10%)</label>
-    <label><input id="cGraze" type="checkbox" checked> GRAZE 판정 표시 (0.6유닛 이내로 스치면 +1)</label>
+    <label><input id="cCurve" type="checkbox"> 난이도 곡선 (10초마다 발사 간격 −10%, S-09)</label>
+    <label><input id="cWarn" type="checkbox"> 발사 예고 0.53초 — 빨갛게 깜빡인 뒤 발사 (S-10)</label>
+    <label><input id="cGraze" type="checkbox"> GRAZE 판정 (0.6유닛 이내로 스치면 +1, S-11)</label>
     <button id="btn">다시 시작 (R)</button>
-    <p class="hint">빨갛게 깜빡이는 몬스터는 0.53초 뒤 발사해요 (💡 제안 기능 — 실제 코드엔 `fireDelay` 변수만 있고 예고 없이 바로 쏴요). 회색 건물 뒤로 숨으면 총알이 막혀요.</p>
+    <p class="hint">기본값은 실제 게임 그대로예요: 몬스터 4마리가 플레이어를 십자로 둘러싸고(북 · 남 · 동 · 서), 예고 없이 플레이어 쪽으로 바로 쏴요. 실제 게임의 맵 회전(초당 10도) · 점프는 위에서 본 2D 시뮬레이션이라 빠져 있고, 건물 배치는 예시예요.</p>
   </aside>
 </main>
 <script>
@@ -97,7 +98,8 @@
     { x: 12, y: 8, w: 4, h: 3 }, { x: 28, y: 9, w: 3, h: 6 },
     { x: 18, y: 20, w: 6, h: 2.5 }, { x: 8, y: 21, w: 2.5, h: 2.5 }, { x: 33, y: 22, w: 3, h: 3 },
   ];
-  const SPAWN_POS = [[2, 2], [W - 2, 2], [2, H - 2], [W - 2, H - 2], [W / 2, 1.5], [W / 2, H - 1.5], [1.5, H / 2], [W - 1.5, H / 2]];
+  // mmain 씬: 맵 중심 기준 북 · 남 ±14, 동 · 서 ±12 (EnemyBox 4개). 5마리 이상은 슬라이더로 늘린 가정
+  const SPAWN_POS = [[W / 2, H / 2 - 13.5], [W / 2, H / 2 + 13.5], [W / 2 + 12, H / 2], [W / 2 - 12, H / 2], [2, 2], [W - 2, 2], [2, H - 2], [W - 2, H - 2]];
 
   let state;
   const keys = new Set();
@@ -109,7 +111,7 @@
 
   function reset() {
     state = {
-      p: { x: W / 2, y: H / 2 - 4 }, bullets: [], fx: [], time: 0, over: false,
+      p: { x: W / 2 + 2.8, y: H / 2 }, bullets: [], fx: [], time: 0, over: false,   // 씬: 플레이어는 중심에서 동쪽으로 약 2.8
       grazes: 0, blocked: 0, best: loadBest(),
       spawners: SPAWN_POS.slice(0, cfg.cnt).map(([x, y]) => ({ x, y, timer: rand(cfg.min, cfg.max), charge: -1 })),
     };
@@ -149,7 +151,14 @@
         }
       } else {
         s.timer -= dt;
-        if (s.timer <= 0) s.charge = 0;
+        if (s.timer <= 0) {
+          if ($('cWarn').checked) s.charge = 0;   // 제안: 예고 뒤 발사
+          else {                                   // 실제 코드: 바로 발사 (공격 애니메이션과 같은 순간)
+            const a = Math.atan2(state.p.y - s.y, state.p.x - s.x);
+            state.bullets.push({ x: s.x, y: s.y, vx: Math.cos(a) * cfg.spd, vy: Math.sin(a) * cfg.spd, life: BULLET_LIFE, grazed: false });
+            s.timer = rand(cfg.min, cfg.max) * scale;
+          }
+        }
       }
     }
 
@@ -212,7 +221,7 @@
       ctx.textAlign = 'center'; ctx.fillStyle = '#ff5d73'; ctx.font = 'bold 40px sans-serif';
       ctx.fillText('GAME OVER', cv.width / 2, cv.height / 2 - 20);
       ctx.fillStyle = '#e8ebf7'; ctx.font = '18px sans-serif';
-      ctx.fillText(`버틴 시간 ${state.time.toFixed(1)}초 · 최고 ${state.best.toFixed(1)}초`, cv.width / 2, cv.height / 2 + 16);
+      ctx.fillText(`Best Time: ${Math.floor(state.best)}   (이번 판 ${state.time.toFixed(1)}초 — 실제 게임은 정수로 표시, S-07)`, cv.width / 2, cv.height / 2 + 16);
       ctx.fillStyle = '#8b93b8'; ctx.fillText('R 또는 클릭으로 재시작', cv.width / 2, cv.height / 2 + 46);
     }
     $('sTime').textContent = state.time.toFixed(1) + '초';
@@ -223,7 +232,7 @@
 
   let last = performance.now();
   function loop(now) {
-    const dt = Math.min(0.05, (now - last) / 1000); last = now;
+    const dt = Math.max(0, Math.min(0.05, (now - last) / 1000)); last = now;
     if (started) update(dt); draw(); if (!started) drawStartGate();
     requestAnimationFrame(loop);
   }
