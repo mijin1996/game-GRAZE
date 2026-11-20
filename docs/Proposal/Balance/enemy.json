@@ -1,0 +1,25 @@
+{
+  "enemy": {
+    "id": "ENM_001",
+    "name": "총알 몬스터",
+    "count": 4,
+    "spawnRateMin": 0.5,
+    "spawnRateMax": 3,
+    "bulletPrefab": "Enemy Variant",
+    "bulletSpeed": 16,
+    "bulletLifetime": 3
+  },
+  "derived": {
+    "avgIntervalSec": 1.75,
+    "bulletsPerSecEach": 0.57,
+    "bulletsPerSecAll": 2.29,
+    "bulletRangeM": 48
+  },
+  "units": {
+    "spawnRateMin": "초",
+    "spawnRateMax": "초",
+    "bulletSpeed": "m/s",
+    "bulletLifetime": "초"
+  },
+  "source": "mmain.unity BulletSpawner x4"
+}

@@ -1,0 +1,23 @@
+{
+  "player": {
+    "id": "PLY_001",
+    "name": "플레이어",
+    "moveSpeed": 5,
+    "jumpPower": 6,
+    "gravity": 15,
+    "skinWidth": 0.05,
+    "stepHeight": 0.3
+  },
+  "derived": {
+    "airTimeSec": 0.8,
+    "jumpHeightM": 1.2
+  },
+  "units": {
+    "moveSpeed": "m/s",
+    "jumpPower": "m/s (위 속도)",
+    "gravity": "m/s²",
+    "skinWidth": "m",
+    "stepHeight": "m"
+  },
+  "source": "mmain.unity PlayerInput"
+}

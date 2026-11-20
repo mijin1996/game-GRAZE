@@ -1,2 +1,0 @@
-﻿ID,Name,MoveSpeed,JumpPower,Gravity,AirTime(s),JumpHeight(m),SkinWidth,StepHeight,Status
-PLY_001,플레이어,8,6,15,0.8,1.2,0.05,0.3,현재

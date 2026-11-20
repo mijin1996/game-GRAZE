@@ -56,7 +56,7 @@
     <h2>코드 수치 조절</h2>
     <label class="row">발사 간격 최소 <b id="vMin">0.5초</b></label><input id="rMin" type="range" min="0.2" max="2" step="0.1" value="0.5">
     <label class="row">발사 간격 최대 <b id="vMax">3초</b></label><input id="rMax" type="range" min="1" max="5" step="0.1" value="3">
-    <label class="row">총알 속도 <b id="vSpd">8</b></label><input id="rSpd" type="range" min="4" max="16" step="1" value="8">
+    <label class="row">총알 속도 <b id="vSpd">16</b></label><input id="rSpd" type="range" min="4" max="24" step="1" value="16">
     <label class="row">몬스터 수 <b id="vCnt">4</b></label><input id="rCnt" type="range" min="1" max="8" step="1" value="4">
     <h2>제안 기능 켜 보기</h2>
     <label><input id="cCurve" type="checkbox"> 난이도 곡선 (10초마다 발사 간격 −10%)</label>
@@ -82,7 +82,7 @@
   }
 
   const UNIT = 20;                 // 1 유닛 = 20px
-  const PLAYER_SPEED = 8;          // PlayerInput.speed
+  const PLAYER_SPEED = 5;          // mmain 씬 PlayerInput.speed
   const PLAYER_R = 0.5;
   const BULLET_LIFE = 3;           // Destroy(gameObject, 3f)
   const FIRE_DELAY = 0.53;         // BulletSpawner.fireDelay
@@ -91,7 +91,7 @@
   const ctx = cv.getContext('2d');
   const W = cv.width / UNIT, H = cv.height / UNIT;
   const $ = (id) => document.getElementById(id);
-  const cfg = { min: 0.5, max: 3, spd: 8, cnt: 4 };
+  const cfg = { min: 0.5, max: 3, spd: 16, cnt: 4 };
 
   const walls = [
     { x: 12, y: 8, w: 4, h: 3 }, { x: 28, y: 9, w: 3, h: 6 },
