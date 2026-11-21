@@ -1,8 +1,8 @@
 # 서버 · 데이터 연동 — GRAZE
 
-> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · **서버·데이터** · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+> 문서 세트: [목차](../Proposal.md) · 기획: [컨셉](../기획/Concept.md) · [시스템](../기획/System.md) · [전투·개체](../기획/Combat_Entity.md) · [레벨 디자인](../기획/LevelDesign.md) · [밸런스](../기획/Balance.md) · 사업·운영: [사업 검토](../대표/Business.md) · [요구사항·로드맵](../기획/Requirements.md) · [Business Model](../기획/Monetization.md) · **서버·데이터** · [리소스](../디자인/Resources.md) · [로그·지표](../기획/Analytics.md) · [QA·출시](../QA/QA_Release.md) · [라이브 운영](../운영/LiveOps.md) · [사업화·법무](../대표/Business_Legal.md) · [needFix](../needFix.md)
 
-> **문서 정보** · 문서 번호 `D08-SERVER` · 버전 v1.0 · 상태 `Draft` · 담당 서버 개발자 · 최종 수정 2026-11-21 · 관련 문서 [시스템](System.md) · [Business Model](Monetization.md)
+> **문서 정보** · 문서 번호 `D08-SERVER` · 버전 v1.0 · 상태 `Draft` · 담당 서버 개발자 · 최종 수정 2026-11-21 · 관련 문서 [시스템](../기획/System.md) · [Business Model](../기획/Monetization.md)
 
 **변경 이력**
 
@@ -18,7 +18,7 @@
 ## 2. 지금 저장하는 것 (코드 기준)
 | 키 | 타입 | 저장하는 곳 | 내용 |
 |---|---|---|---|
-| `BestTime` | float | `GameManager` | 최고 생존 시간 (표시는 정수로 잘림 → [S-07](needFix.md)) |
+| `BestTime` | float | `GameManager` | 최고 생존 시간 (표시는 정수로 잘림 → [S-07](../needFix.md)) |
 
 서버는 없어요.
 
@@ -30,7 +30,7 @@
 | 광고 제거 구매 | 스토어 구매 기록 | 스토어 | 재설치 시 복원 |
 | 주간 랭킹 (보류) | 서버 | **서버 검증** | 기록 게임은 위조가 쉬움 → 판 시간 · 입력 로그 검증 필요 |
 
-> 랭킹은 보류([REQ_201](Requirements.md))라 1차 출시는 서버 없이 가요. 랭킹을 만들면 Google Play 게임즈 · Game Center 리더보드가 가장 가벼운 선택지예요 → [F-04](needFix.md#8-정할-것)
+> 랭킹은 보류([REQ_201](../기획/Requirements.md))라 1차 출시는 서버 없이 가요. 랭킹을 만들면 Google Play 게임즈 · Game Center 리더보드가 가장 가벼운 선택지예요 → [F-04](../needFix.md#8-정할-것)
 
 ## 4. 저장 규칙
 | 규칙 | 내용 |

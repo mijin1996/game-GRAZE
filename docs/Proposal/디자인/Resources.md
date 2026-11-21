@@ -1,8 +1,8 @@
 # 리소스 (아트 · 사운드) 명세 — GRAZE
 
-> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](Server_Data.md) · **리소스** · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+> 문서 세트: [목차](../Proposal.md) · 기획: [컨셉](../기획/Concept.md) · [시스템](../기획/System.md) · [전투·개체](../기획/Combat_Entity.md) · [레벨 디자인](../기획/LevelDesign.md) · [밸런스](../기획/Balance.md) · 사업·운영: [사업 검토](../대표/Business.md) · [요구사항·로드맵](../기획/Requirements.md) · [Business Model](../기획/Monetization.md) · [서버·데이터](../개발/Server_Data.md) · **리소스** · [로그·지표](../기획/Analytics.md) · [QA·출시](../QA/QA_Release.md) · [라이브 운영](../운영/LiveOps.md) · [사업화·법무](../대표/Business_Legal.md) · [needFix](../needFix.md)
 
-> **문서 정보** · 문서 번호 `D09-RES` · 버전 v1.0 · 상태 `Draft` · 담당 아티스트 · 사운드 디자이너 · 최종 수정 2026-11-21 · 관련 문서 [전투·개체](Combat_Entity.md) · [사업화·법무](Business_Legal.md)
+> **문서 정보** · 문서 번호 `D09-RES` · 버전 v1.0 · 상태 `Draft` · 담당 아티스트 · 사운드 디자이너 · 최종 수정 2026-11-21 · 관련 문서 [전투·개체](../기획/Combat_Entity.md) · [사업화·법무](../대표/Business_Legal.md)
 
 **변경 이력**
 
@@ -24,7 +24,7 @@
 | `GSHYEJAROUN-Bold.otf` | `Fonts/` | 라이선스 파일 없음 | 출처 · 상업 이용 가능 여부 확인 |
 | `KakaoTalk_20261026_*.png` | `Images/` | 메신저로 받은 이미지 — 누가 만들었는지 기록 없음 | 제작자 · 사용 허락 기록 |
 
-→ [F-03](needFix.md#8-정할-것)
+→ [F-03](../needFix.md#8-정할-것)
 
 ## 3. 지금 쓰는 리소스
 
@@ -49,14 +49,14 @@
 | `SFX_RPG_*` | `Clips/RPG_Essentials_Free/` | 효과음 | RPG Essentials Free 팩 | ⚠️ |
 | `SFX_STEP_*` · `SFX_JUMP` · `SFX_LAND` · `SFX_DIE` | `Sounds/` · `Sounds/Player/` | 발소리 · 점프 · 사망 | 미확인 | ⚠️ |
 
-> 같은 소리가 `Clips/`와 `Sounds/`에 두 벌 있어요 (Footstep · Jump · PlayerDie). 정리 → [F-07](needFix.md)
+> 같은 소리가 `Clips/`와 `Sounds/`에 두 벌 있어요 (Footstep · Jump · PlayerDie). 정리 → [F-07](../needFix.md)
 
 ## 4. 새로 필요한 리소스
 | 리소스 ID | 종류 | 관련 | 상태 |
 |---|---|---|---|
-| `FX_GRAZE` | 스칠 때 이펙트 · 효과음 (짧고 가볍게, 0.2초) | [S-18](needFix.md) | 대기 |
-| `FX_FIRE_WARN` | 발사 예고 (몬스터 빛남 · 원) | [S-10](needFix.md) | 대기 |
-| `UI_EDGE_ARROW` | 화면 밖 몬스터 방향 화살표 | [S-19](needFix.md) | 대기 |
-| `UI_RESULT` | 결과 화면 (이번 · 최고 · 다음 목표) | [S-20](needFix.md) | 대기 |
+| `FX_GRAZE` | 스칠 때 이펙트 · 효과음 (짧고 가볍게, 0.2초) | [S-18](../needFix.md) | 대기 |
+| `FX_FIRE_WARN` | 발사 예고 (몬스터 빛남 · 원) | [S-10](../needFix.md) | 대기 |
+| `UI_EDGE_ARROW` | 화면 밖 몬스터 방향 화살표 | [S-19](../needFix.md) | 대기 |
+| `UI_RESULT` | 결과 화면 (이번 · 최고 · 다음 목표) | [S-20](../needFix.md) | 대기 |
 | `FONT_MAIN_NEW` | Glue Gun 대체 폰트 (상업 가능 · 한글 포함) | §2 | 대기 |
-| `STORE_*` | 스토어 아이콘 · 스크린샷 | [QA](QA_Release.md) | 대기 |
+| `STORE_*` | 스토어 아이콘 · 스크린샷 | [QA](../QA/QA_Release.md) | 대기 |

@@ -1,8 +1,8 @@
 # 사업화 · 법무 체크리스트 — GRAZE
 
-> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · **사업화·법무** · [needFix](needFix.md)
+> 문서 세트: [목차](../Proposal.md) · 기획: [컨셉](../기획/Concept.md) · [시스템](../기획/System.md) · [전투·개체](../기획/Combat_Entity.md) · [레벨 디자인](../기획/LevelDesign.md) · [밸런스](../기획/Balance.md) · 사업·운영: [사업 검토](Business.md) · [요구사항·로드맵](../기획/Requirements.md) · [Business Model](../기획/Monetization.md) · [서버·데이터](../개발/Server_Data.md) · [리소스](../디자인/Resources.md) · [로그·지표](../기획/Analytics.md) · [QA·출시](../QA/QA_Release.md) · [라이브 운영](../운영/LiveOps.md) · **사업화·법무** · [needFix](../needFix.md)
 
-> **문서 정보** · 문서 번호 `D13-LEGAL` · 버전 v1.0 · 상태 `Draft` · 담당 대표 · 최종 수정 2026-11-21 · 관련 문서 [리소스](Resources.md) · [QA·출시](QA_Release.md)
+> **문서 정보** · 문서 번호 `D13-LEGAL` · 버전 v1.0 · 상태 `Draft` · 담당 대표 · 최종 수정 2026-11-21 · 관련 문서 [리소스](../디자인/Resources.md) · [QA·출시](../QA/QA_Release.md)
 
 **변경 이력**
 
@@ -32,10 +32,10 @@
 | 약관 | 이용약관 | 광고 제거 상품 · 청약철회 · 서비스 종료 | 대기 | |
 | 지식재산 | 상표 | "GRAZE"는 일반 영어 단어라 게임 분류에 같은 이름이 있는지 검색 | 대기 | |
 | | **폰트 라이선스** | **Glue Gun = 비상업 전용**, arial = 재배포 불가 가능성, GSHYEJAROUN = 미확인 | ⚠️ 대기 | |
-| | 기타 리소스 | [리소스](Resources.md) 전부 확인 (카카오톡으로 받은 이미지 포함) | ⚠️ 대기 | |
-| | 오픈소스 고지 | 에셋 · 폰트 고지 화면 ([REQ_114](Requirements.md)) | 대기 | |
+| | 기타 리소스 | [리소스](../디자인/Resources.md) 전부 확인 (카카오톡으로 받은 이미지 포함) | ⚠️ 대기 | |
+| | 오픈소스 고지 | 에셋 · 폰트 고지 화면 ([REQ_114](../기획/Requirements.md)) | 대기 | |
 | 서비스 종료 | 종료 절차 | 광고 제거 구매자 안내 | 대기 | |
 
 ## 3. 이 게임에서 먼저 볼 것
-1. **비상업 폰트** — 광고만 넣어도 상업 이용이에요. 교체 또는 상업 라이선스 구매가 출시 조건이에요 → [F-03](needFix.md#8-정할-것)
+1. **비상업 폰트** — 광고만 넣어도 상업 이용이에요. 교체 또는 상업 라이선스 구매가 출시 조건이에요 → [F-03](../needFix.md#8-정할-것)
 2. **이름 "GRAZE"** — 흔한 단어라 스토어 검색 · 상표에서 겹칠 수 있어요. 부제(예: "GRAZE: ○○") 검토.
