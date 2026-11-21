@@ -1,14 +1,14 @@
 # 요구사항 · 로드맵 — GRAZE
 
-> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · **요구사항·로드맵** · [BM·경제](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
+> 문서 세트: [목차](Proposal.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](Business.md) · **요구사항·로드맵** · [Business Model](Monetization.md) · [서버·데이터](Server_Data.md) · [리소스](Resources.md) · [로그·지표](Analytics.md) · [QA·출시](QA_Release.md) · [라이브 운영](LiveOps.md) · [사업화·법무](Business_Legal.md) · [needFix](needFix.md)
 
-> **문서 정보** · ID `D02-REQ` · v1.0 · 상태 `Draft` · Owner ME (기획 · 개발) · 최종 수정 2026-11-21 · 관련 `needFix`
+> **문서 정보** · 문서 번호 `D02-REQ` · 버전 v1.0 · 상태 `Draft` · 담당 기획자 · 최종 수정 2026-11-21 · 관련 문서 [needFix](needFix.md)
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | 사내 문서 기준 v3 적용 | ME | 문서만 |
+| v1.0 | 2026-11-21 | 최초 작성 | — | 기획자 | — |
 
 ---
 
@@ -18,30 +18,30 @@
 ## 2. 이미 구현된 것
 | ID | 기능 | 근거 문서 | 상태 |
 |---|---|---|---|
-| `REQ_001` | 이동 (조이스틱 · 키보드) · 점프 | [시스템](System.md) | 완료 (착지 높이 고정 S-03) |
+| `REQ_001` | 이동 (조이스틱 · 키보드) · 점프 | [시스템](System.md) | 완료 (착지 높이 고정 [S-03](needFix.md)) |
 | `REQ_002` | 몬스터 4마리 총알 발사 · 맵 회전 | [전투 · 개체](Combat_Entity.md) | 완료 |
-| `REQ_003` | 생존 시간 · 최고 기록 저장 (`BestTime`) | [시스템](System.md) | 완료 (정수 표시 S-07) |
+| `REQ_003` | 생존 시간 · 최고 기록 저장 (`BestTime`) | [시스템](System.md) | 완료 (정수 표시 [S-07](needFix.md)) |
 | `REQ_004` | 건물 엄폐 | [레벨 디자인](LevelDesign.md) | 완료 |
 
 ## 3. 출시까지 할 일
 | ID | 기능 | 우선순위 | 마일스톤 | 공수 | 관련 | 상태 |
 |---|---|---|---|---|---|---|
-| `REQ_101` | 게임오버 시 모든 몬스터 정지 | Must | 알파 | 0.5일 | S-01 | 대기 |
-| `REQ_102` | 게임오버 1초 입력 잠금 · 다시 하기 버튼 · 중복 사망 방지 | Must | 알파 | 0.5일 | S-04 · S-05 | 대기 |
-| `REQ_103` | 기록 0.1초 단위 · 백그라운드 자동 일시정지 | Must | 알파 | 0.5일 | S-07 · S-08 | 대기 |
-| `REQ_104` | GRAZE 판정 · 콤보 점수 (생존 시간과 분리) | Must | 베타 | 3일 | S-11 | 대기 |
-| `REQ_105` | 손맛 피드백 (진동 · 효과음 · 이펙트, 너그러운 히트박스) | Must | 베타 | 2일 | S-18 | 대기 |
-| `REQ_106` | 발사 예고 (`fireDelay` 사용) | Must | 베타 | 1일 | S-02 · S-10 | 대기 |
-| `REQ_107` | 30 ~ 45초 구간 난이도 곡선 | Must | 베타 | 1일 + 테스트 | S-09 · S-17 | 대기 |
-| `REQ_108` | 화면 밖 몬스터 방향 표시 | Should | 베타 | 1일 | S-19 | 대기 |
-| `REQ_109` | 무너지는 엄폐물 1종 | Should | 베타 | 2일 | S-13 | 대기 |
-| `REQ_110` | 결과 화면 (이번 · 최고 · 다음 목표, 1초 재시작) | Must | 베타 | 1일 | S-20 | 대기 |
+| `REQ_101` | 게임오버 시 모든 몬스터 정지 | Must | 알파 | 0.5일 | [S-01](needFix.md) | 대기 |
+| `REQ_102` | 게임오버 1초 입력 잠금 · 다시 하기 버튼 · 중복 사망 방지 | Must | 알파 | 0.5일 | [S-04](needFix.md) · [S-05](needFix.md) | 대기 |
+| `REQ_103` | 기록 0.1초 단위 · 백그라운드 자동 일시정지 | Must | 알파 | 0.5일 | [S-07](needFix.md) · [S-08](needFix.md) | 대기 |
+| `REQ_104` | GRAZE 판정 · 콤보 점수 (생존 시간과 분리) | Must | 베타 | 3일 | [S-11](needFix.md) | 대기 |
+| `REQ_105` | 손맛 피드백 (진동 · 효과음 · 이펙트, 너그러운 히트박스) | Must | 베타 | 2일 | [S-18](needFix.md) | 대기 |
+| `REQ_106` | 발사 예고 (`fireDelay` 사용) | Must | 베타 | 1일 | [S-02](needFix.md) · [S-10](needFix.md) | 대기 |
+| `REQ_107` | 30 ~ 45초 구간 난이도 곡선 | Must | 베타 | 1일 + 테스트 | [S-09](needFix.md) · [S-17](needFix.md) | 대기 |
+| `REQ_108` | 화면 밖 몬스터 방향 표시 | Should | 베타 | 1일 | [S-19](needFix.md) | 대기 |
+| `REQ_109` | 무너지는 엄폐물 1종 | Should | 베타 | 2일 | [S-13](needFix.md) | 대기 |
+| `REQ_110` | 결과 화면 (이번 · 최고 · 다음 목표, 1초 재시작) | Must | 베타 | 1일 | [S-20](needFix.md) | 대기 |
 | `REQ_111` | 오늘의 탄막 (날짜 시드) | Could | 출시 | 2일 | needFix §7 | 대기 |
-| `REQ_112` | 광고 (전면 · 보상형) · 광고 제거 결제 | Must | 출시 | 3일 | [BM](Monetization.md) | 대기 |
+| `REQ_112` | 광고 (전면 · 보상형) · 광고 제거 결제 | Must | 출시 | 3일 | [Business Model](Monetization.md) | 대기 |
 | `REQ_113` | 로그 이벤트 | Must | 베타 | 1일 | [로그](Analytics.md) | 대기 |
-| `REQ_114` | 비상업 폰트 · arial 교체, 라이선스 고지 화면 | Must | 출시 | 1일 | F-03 | 대기 |
+| `REQ_114` | 비상업 폰트 · arial 교체, 라이선스 고지 화면 | Must | 출시 | 1일 | [F-03](needFix.md) | 대기 |
 | `REQ_201` | 주간 랭킹 (서버) · 상점 · 스킨 | Won't | — | — | §6 | 보류 |
-| `REQ_202` | 슬로우 존 · 새 패턴 | Won't | — | — | S-12 | 보류 |
+| `REQ_202` | 슬로우 존 · 새 패턴 | Won't | — | — | [S-12](needFix.md) | 보류 |
 
 ## 4. 완료 기준 (Given / When / Then)
 | ID | 완료 기준 |
