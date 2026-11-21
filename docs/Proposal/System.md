@@ -50,7 +50,6 @@ flowchart LR
   classDef ui fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef data fill:#A33A33,color:#fff,stroke:#A33A33
 ```
-> 읽는 법: 상자 = 씬 · 스크립트 · 오브젝트, 화살표 위 글 = 보내는 신호나 하는 일이에요. ①②③은 일어나는 순서예요.
 
 ## 1. 화면 흐름
 빌드 씬: `0 Intro` → `1 mmain`
@@ -71,7 +70,6 @@ stateDiagram-v2
   class mmain play
   class GameOver fail
 ```
-> 읽는 법: 상자 = 상태, 화살표 위 글 = 상태가 바뀌는 조건이에요. 검은 점에서 시작해요.
 
 **[와이어프레임] 플레이 화면 (기준 1920 × 1080)**
 ```
@@ -102,7 +100,6 @@ stateDiagram-v2
 | A | 조이스틱 영역 | 왼쪽 절반 어디든 눌러 이동 | `Dynamic Joystick` · 0 ~ 960, 0 ~ 1080 |
 | B | 점프 버튼 | 1단 점프 | `JumpButton` · 1432.7 ~ 1605, 222 ~ 482 |
 | C | 생존 시간 | 버틴 시간 표시 | `TimeText` · 834 ~ 1534, 772 ~ 872 |
-> 읽는 법: 테두리 = 화면 전체, 점선 상자 = 요소가 차지하는 영역, 글자 = 아래 표의 요소예요. 위치는 씬의 RectTransform 값으로 계산했어요 (화면 비율이 기준 해상도와 다르면 조금 달라져요).
 
 **[와이어프레임] 게임오버 화면 (기준 1920 × 1080)**
 ```
@@ -133,7 +130,6 @@ stateDiagram-v2
 | A | 게임오버 글자 | 게임오버 표시 | `GameoverText` · 260 ~ 1660, 580 ~ 780 |
 | B | 기록 | "Best Time: n" 표시 | `RecordText` · 260 ~ 1660, 490 ~ 590 |
 | C | 재시작 안내 | 아무 곳이나 누르면 다시 시작 ([S-04](needFix.md)) | `RestartText` · 238 ~ 1638, 380 ~ 460 |
-> 읽는 법: 테두리 = 화면 전체, 점선 상자 = 요소가 차지하는 영역, 글자 = 아래 표의 요소예요. 위치는 씬의 RectTransform 값으로 계산했어요 (화면 비율이 기준 해상도와 다르면 조금 달라져요).
 
 ## 2. 상태 머신
 
@@ -151,7 +147,6 @@ stateDiagram-v2
   class Playing play
   class GameOver fail
 ```
-> 읽는 법: 상자 = 상태, 화살표 위 글 = 상태가 바뀌는 조건이에요. 검은 점에서 시작해요.
 
 **[상태도] 플레이어 (`PlayerInput`)**
 ```mermaid
@@ -174,7 +169,6 @@ stateDiagram-v2
   class Walk,Air play
   class Dead fail
 ```
-> 읽는 법: 상자 = 상태, 화살표 위 글 = 상태가 바뀌는 조건이에요. 검은 점에서 시작해요.
 
 | 상태 | 애니메이션 | 발소리 | 이동 |
 |---|---|---|---|
@@ -215,7 +209,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 ```
 (옆에서 본 모습)
@@ -267,7 +260,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 **[선그래프] 점프 높이 (0.1초 간격)**
 ```mermaid
@@ -277,7 +269,6 @@ xychart-beta
   y-axis "높이 m" 0 --> 1.4
   line [0, 0.53, 0.9, 1.13, 1.2, 1.13, 0.9, 0.53, 0]
 ```
-> 읽는 법: 왼쪽 → 오른쪽이 시간이에요. 0.4초에 가장 높은 1.2m, 0.8초에 착지해요 (위 속도 6 · 중력 15).
 
 > 세부 조건(코드 기준)은 [부록 A-2](#a-2-점프-물리-엔진-대신-직접-계산한-중력)에 있어요.
 
@@ -308,7 +299,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 > 세부 조건(코드 기준)은 [부록 A-3](#a-3-몬스터-발사)에 있어요.
 
@@ -335,7 +325,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 > 세부 조건(코드 기준)은 [부록 A-4](#a-4-총알)에 있어요.
 
@@ -374,7 +363,6 @@ flowchart TD
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef endc fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 초록에서 시작해 화살표를 따라 내려가요. 주황 마름모에서 Y(예) / N(아니오)으로 갈라져요.
 
 > 세부 조건(코드 기준)은 [부록 A-5](#a-5-게임오버--기록)에 있어요.
 
@@ -410,7 +398,6 @@ flowchart TB
   classDef bad fill:#A33A33,color:#fff,stroke:#A33A33
   classDef todo fill:#6B7280,color:#fff,stroke:#6B7280
 ```
-> 읽는 법: 주황 = 이런 상황이면? → 초록 ✅ 코드가 이미 처리함 / 빨강 ⚠️ 문제 (괄호 = needFix 번호) / 회색 💡 고치면 좋은 점. 아래 표에 같은 번호로 자세히 있어요.
 
 | # | 상황 | 현재 동작 | 상태 |
 |---|---|---|---|
