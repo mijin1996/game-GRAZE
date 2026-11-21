@@ -47,7 +47,6 @@ flowchart LR
   classDef scene fill:#2F8F6B,color:#fff,stroke:#2F8F6B
   classDef script fill:#3AA6C8,color:#fff,stroke:#3AA6C8
 ```
-> 읽는 법: 왼쪽 초록 = 누르는 것 (📱 모바일 · ⌨️ PC) → 오른쪽 파랑 = 게임에서 일어나는 일이에요.
 
 ## 2. 플레이어 (`PlayerInput`)
 **[구성도] 플레이어 (입력 → 처리 → 결과)**
@@ -92,7 +91,6 @@ flowchart LR
   classDef ui fill:#5A4A9E,color:#fff,stroke:#5A4A9E
   classDef data fill:#A33A33,color:#fff,stroke:#A33A33
 ```
-> 읽는 법: 왼쪽 초록 = 입력 → 파랑 = PlayerInput이 하는 일 → 회색 = 플레이어 몸 → 보라 = 보이고 들리는 결과예요. ①②③은 이동 순서예요.
 
 | 항목 | 씬 값 | 코드 기본값 |
 |---|---|---|
@@ -125,7 +123,6 @@ gantt
   대기 (예 1.5초) :w2, 2000, 1500ms
   발사 + 공격 동작 :milestone, f2, 3500, 0ms
 ```
-> 읽는 법: 발사하기 전에 미리 알려 주는 동작이 없어요 (`fireDelay` 미사용). 왼쪽 → 오른쪽이 시간이에요. 막대 = 이어지는 동안, 마름모 = 그 순간. 빨간 막대는 위험하거나 못 움직이는 시간이에요.
 
 ## 4. 총알 (`Bullet`)
 ```
@@ -149,7 +146,6 @@ xychart-beta
   y-axis "m/s" 0 --> 20
   bar [5, 16]
 ```
-> 읽는 법: 막대가 길수록 빨라요. 총알(16)이 플레이어(5)보다 3.2배 빨라요.
 
 ## 5. 맵 회전 (`Rotator`)
 | 항목 | 값 |
@@ -169,7 +165,6 @@ flowchart LR
   classDef start fill:#2F8F6B,color:#fff,stroke:#2F8F6B
   classDef io fill:#5A4A9E,color:#fff,stroke:#5A4A9E
 ```
-> 읽는 법: 초록 = 이런 일이 생기면 → 보라 = ✨ 보이는 것 · 🔊 들리는 것이에요.
 
 | 대상 | 이펙트 | 사운드 |
 |---|---|---|
