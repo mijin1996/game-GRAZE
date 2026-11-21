@@ -56,4 +56,5 @@
 ---
 
 ## 📁 문서
-- [`Docs/내가_정리한_파일.md`](Docs/내가_정리한_파일.md) — 처음 작성한 README 메모
+- [`docs/Proposal/Proposal.md`](docs/Proposal/Proposal.md) — 기획서 (컨셉 ~ 사업화 · 법무) · [needFix](docs/Proposal/needFix.md)
+- [`docs/MeMemo.md`](docs/MeMemo.md) — 처음 작성한 README 메모
