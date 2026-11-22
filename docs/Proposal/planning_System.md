@@ -1,9 +1,9 @@
 # 시스템 — 이동 · 회피 · 게임 흐름
 
-> 문서 세트: [목차](../Index.md) · 기획: [컨셉](Concept.md) · **시스템** · [전투·개체](Combat_Entity.md) · [레벨 디자인](LevelDesign.md) · [밸런스](Balance.md) · 사업·운영: [사업 검토](../대표/Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](../개발/Server_Data.md) · [리소스](../디자인/Resources.md) · [로그·지표](Analytics.md) · [QA·출시](../QA/QA_Release.md) · [라이브 운영](../운영/LiveOps.md) · [사업화·법무](../대표/Business_Legal.md) · [needFix](../needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · **시스템** · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
 > 관련 코드: `PlayerInput.cs` · `BulletSpawner.cs` · `Bullet.cs` · `GameManager.cs` · `SceneChange.cs` · `Rotator.cs` · `Editor/Graze*.cs`
 
-> **문서 정보** · 문서 번호 `D03-SYSTEM` · 버전 v1.0 · 상태 `Review` · 담당 기획자 · 클라이언트 개발자 · 최종 수정 2026-11-21 · 관련 문서 [전투·개체](Combat_Entity.md) · [Business Model](Monetization.md)
+> **문서 정보** · 문서 번호 `D03-SYSTEM` · 버전 v1.0 · 상태 `Review` · 담당 기획자 · 클라이언트 개발자 · 최종 수정 2026-11-21 · 관련 문서 [전투·개체](planning_Combat_Entity.md) · [Business Model](planning_Monetization.md)
 
 **변경 이력**
 
@@ -129,7 +129,7 @@ stateDiagram-v2
 |---|---|---|---|
 | A | 게임오버 글자 | 게임오버 표시 | `GameoverText` · 260 ~ 1660, 580 ~ 780 |
 | B | 기록 | "Best Time: n" 표시 | `RecordText` · 260 ~ 1660, 490 ~ 590 |
-| C | 재시작 안내 | 아무 곳이나 누르면 다시 시작 ([S-04](../needFix.md)) | `RestartText` · 238 ~ 1638, 380 ~ 460 |
+| C | 재시작 안내 | 아무 곳이나 누르면 다시 시작 ([S-04](common_needFix.md)) | `RestartText` · 238 ~ 1638, 380 ~ 460 |
 
 ## 2. 상태 머신
 
@@ -401,17 +401,17 @@ flowchart TB
 
 | # | 상황 | 현재 동작 | 상태 |
 |---|---|---|---|
-| 1 | 게임오버 후 몬스터 발사 | 연결된 1마리만 멈추고 나머지 3마리는 계속 발사 | ⚠️ → [S-01](../needFix.md) |
+| 1 | 게임오버 후 몬스터 발사 | 연결된 1마리만 멈추고 나머지 3마리는 계속 발사 | ⚠️ → [S-01](common_needFix.md) |
 | 2 | 벽 판정 중 이미 벽에 겹쳐 있음 | 거리 0인 충돌 무시 → 빠져나갈 수 있음 | ✅ |
 | 3 | 낮은 턱 · 바닥 | 0.3m 아래 위쪽 면은 통과 | ✅ |
-| 4 | 높은 지형 위로 점프 | 착지 높이가 "시작 높이"로 고정 → 위에 올라설 수 없음 | ⚠️ → [S-03](../needFix.md) |
+| 4 | 높은 지형 위로 점프 | 착지 높이가 "시작 높이"로 고정 → 위에 올라설 수 없음 | ⚠️ → [S-03](common_needFix.md) |
 | 5 | 공중에서 점프 연타 | 무시 (1단) | ✅ |
 | 6 | 조이스틱과 키보드 동시 입력 | 조이스틱 우선 | ✅ |
-| 7 | 게임오버 화면에서 클릭 | 즉시 재시작 | ⚠️ → [S-04](../needFix.md) |
-| 8 | 같은 프레임에 총알 2발 명중 | `Die()`를 막는 검사 없음 | ⚠️ → [S-05](../needFix.md) |
-| 9 | 배경 음악 | 이름("Music")으로 찾아서 재생 | ⚠️ → [S-06](../needFix.md) |
-| 10 | 기록 표시 | 소수점 버림(정수) | → [S-07](../needFix.md) |
-| 11 | 일시정지 | 기능 없음 | → [S-08](../needFix.md) |
+| 7 | 게임오버 화면에서 클릭 | 즉시 재시작 | ⚠️ → [S-04](common_needFix.md) |
+| 8 | 같은 프레임에 총알 2발 명중 | `Die()`를 막는 검사 없음 | ⚠️ → [S-05](common_needFix.md) |
+| 9 | 배경 음악 | 이름("Music")으로 찾아서 재생 | ⚠️ → [S-06](common_needFix.md) |
+| 10 | 기록 표시 | 소수점 버림(정수) | → [S-07](common_needFix.md) |
+| 11 | 일시정지 | 기능 없음 | → [S-08](common_needFix.md) |
 | 12 | 총알끼리 닿음 | 트리거끼리라 무시 | ✅ |
 
 ## 5. 에디터 자동화 도구

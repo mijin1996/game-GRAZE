@@ -1,8 +1,8 @@
 # 레벨 디자인 — mmain 씬
 
-> 문서 세트: [목차](../Index.md) · 기획: [컨셉](Concept.md) · [시스템](System.md) · [전투·개체](Combat_Entity.md) · **레벨 디자인** · [밸런스](Balance.md) · 사업·운영: [사업 검토](../대표/Business.md) · [요구사항·로드맵](Requirements.md) · [Business Model](Monetization.md) · [서버·데이터](../개발/Server_Data.md) · [리소스](../디자인/Resources.md) · [로그·지표](Analytics.md) · [QA·출시](../QA/QA_Release.md) · [라이브 운영](../운영/LiveOps.md) · [사업화·법무](../대표/Business_Legal.md) · [needFix](../needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · **레벨 디자인** · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D05-LEVEL` · 버전 v1.0 · 상태 `Review` · 담당 레벨 디자이너 · 최종 수정 2026-11-21 · 관련 문서 [밸런스](Balance.md)
+> **문서 정보** · 문서 번호 `D05-LEVEL` · 버전 v1.0 · 상태 `Review` · 담당 레벨 디자이너 · 최종 수정 2026-11-21 · 관련 문서 [밸런스](planning_Balance.md)
 
 **변경 이력**
 
@@ -23,7 +23,7 @@
 | 회전 | `spinPivot` + `Rotator` 1개 (초당 10도) | 씬 |
 | 목표 | 최대한 오래 생존 | `GameManager` |
 
-> 맵의 실제 배치(몬스터 · 건물 위치)는 씬 탑다운 캡처로 넣어 주세요 → [S-14](../needFix.md)
+> 맵의 실제 배치(몬스터 · 건물 위치)는 씬 탑다운 캡처로 넣어 주세요 → [S-14](common_needFix.md)
 
 **[구성도] mmain 씬 구성**
 ```mermaid
@@ -91,7 +91,7 @@ z -1.7   x -11.1 ~ 18.1  (오른쪽 = +x, 위 = +z)
 | P | 플레이어 시작 | `Player` | 6.3, 14.5 |
 | + | 맵 회전 중심 (초당 10도) | `spinPivot` | 1.8, 15.2 |
 
-몬스터 4마리가 플레이어를 둘러싼 십자 모양이에요. 맵 전체(`spinPivot` 아래)가 회전하므로 위치는 시작 순간 기준이에요. 건물 배치는 씬 캡처가 필요해요 ([S-14](../needFix.md)).
+몬스터 4마리가 플레이어를 둘러싼 십자 모양이에요. 맵 전체(`spinPivot` 아래)가 회전하므로 위치는 시작 순간 기준이에요. 건물 배치는 씬 캡처가 필요해요 ([S-14](common_needFix.md)).
 
 ## 2. 난이도
 현재는 처음부터 끝까지 같은 조건이에요.
@@ -100,4 +100,4 @@ z -1.7   x -11.1 ~ 18.1  (오른쪽 = +x, 위 = +z)
 |---|---|---|---|
 | 0초 ~ 게임오버 | 4마리 | 0.5 ~ 3초 랜덤 | 2.29발 |
 
-> 시간에 따라 어려워지는 곡선은 [S-09](../needFix.md)
+> 시간에 따라 어려워지는 곡선은 [S-09](common_needFix.md)
