@@ -1,33 +1,36 @@
 # 사업 검토 — GRAZE
 
-> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: **사업 검토** · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planner_Concept.md) · [시스템](planner_System.md) · [전투·개체](planner_Combat_Entity.md) · [레벨 디자인](designer_LevelDesign.md) · [밸런스](planner_Balance.md) · 사업·운영: **사업 검토** · [요구사항·로드맵](planner_Requirements.md) · [Business Model](planner_Monetization.md) · [서버·데이터](developer_Server_Data.md) · [리소스](designer_Resources.md) · [로그·지표](planner_Analytics.md) · [QA·출시](tester_Release.md) · [라이브 운영](operator_LiveOps.md) · [사업화·법무](owner_Legal.md) · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D01-BIZ` · 버전 v1.0 · 상태 `Draft` · 담당 대표 · 기획자 · 최종 수정 2026-11-21 · 관련 문서 [컨셉](planning_Concept.md) · [Business Model](planning_Monetization.md) · [사업화·법무](owner_Business_Legal.md)
+> **문서 정보**
+
+| 문서 번호 | 버전 | 상태 | 책임자 | 협업 | 최종 수정 | 관련 문서 |
+|---|---|---|---|---|---|---|
+| `D01-BIZ` | v1.1 | `Draft` | 대표 | 기획자 | 2026-11-23 | [컨셉](planner_Concept.md) · [Business Model](planner_Monetization.md) · [사업화·법무](owner_Legal.md) |
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | — | 대표 | — |
 
 ---
 
 ## 1. 목적
-이 게임을 **출시까지 만들 가치가 있는지** 판단하는 문서예요. 사업계획서 · 정부지원사업 신청서의 원본으로도 써요. 숫자는 **목표 · 가정**이에요.
+이 게임을 **출시까지 만들 가치가 있는지** 판단하는 문서임. 사업계획서 · 정부지원사업 신청서의 원본으로도 씀. 숫자는 **목표 · 가정**임.
 
 ## 2. 한 장 요약
 | 항목 | 내용 | 상태 |
 |---|---|---|
 | 게임 이름 | GRAZE ("살짝 스치다") | 확정 (상표 확인 필요) |
-| 한 줄 정의 | 사방의 몬스터가 쏘는 총알을 옆으로 비켜 서고 건물 뒤에 숨으며 오래 버티는 3D 탄막 회피 게임 | 확정 ([컨셉](planning_Concept.md)) |
+| 한 줄 정의 | 사방의 몬스터가 쏘는 총알을 옆으로 비켜 서고 건물 뒤에 숨으며 오래 버티는 3D 탄막 회피 게임 | 확정 ([컨셉](planner_Concept.md)) |
 | 최종 방향 | 총알을 스쳐(GRAZE) 콤보 · 점수를 뽑는 **1분 아케이드 스코어 어택** | needFix §7 결정 |
 | 장르 | 하이퍼 캐주얼 · 아케이드 | 확정 |
 | 플랫폼 | 모바일 (조이스틱 + 점프), PC는 테스트. `Assets/AppsInToss` 폴더가 있지만 SDK 패키지는 없음 | 유통 채널 결정 → [F-01](common_needFix.md#8-정할-것) |
 | 타깃 | 쉬는 시간에 1분 안팎으로 기록 경쟁을 즐기는 모바일 캐주얼 유저 | 확정 |
-| 수익 모델 | 광고 (전면 · 보상형) + 광고 제거 → [Business Model](planning_Monetization.md) | 제안 |
+| 수익 모델 | 광고 (전면 · 보상형) + 광고 제거 → [Business Model](planner_Monetization.md) | 제안 |
 
 ## 3. 경쟁작 비교
-> 유형으로 적었어요. 실제 게임 3개를 골라 채워 주세요 → [F-02](common_needFix.md#8-정할-것)
+> 유형으로 적었음. 실제 경쟁작 3개 선정 및 작성 필요 (담당: 대표, 협업: 기획자) → [F-02](common_needFix.md#8-정할-것)
 
 | 유형 | 보통의 Business Model | 이 게임의 차별점 |
 |---|---|---|
@@ -38,7 +41,7 @@
 ## 4. 목표 지표 (KPI) — 가정
 | 지표 | 목표 (예시값) | 확인 방법 |
 |---|---|---|
-| 한 판 평균 생존 시간 | 30 ~ 45초 (먼저 맞출 구간) | [로그](planning_Analytics.md) `evt_run_end.survive_sec` ([S-17](common_needFix.md)) |
+| 한 판 평균 생존 시간 | 30 ~ 45초 (먼저 맞출 구간) | [로그](planner_Analytics.md) `evt_run_end.survive_sec` ([S-17](common_needFix.md)) |
 | 결과 → 다시 하기 비율 | 70% | `evt_retry` ([S-20](common_needFix.md)) |
 | 하루 1인당 판 수 | 10판 | `evt_run_start` |
 | D1 재접속률 | 25% | `evt_session_start` |
@@ -48,7 +51,7 @@
 | 항목 | 내용 |
 |---|---|
 | 인건비 | 1인 (기획 · 개발 겸임) |
-| 에셋 | 무료 에셋 다수 — **비상업 라이선스 폰트 교체 · 구매 비용** 포함 ([리소스](design_Resources.md)) |
+| 에셋 | 무료 에셋 다수 — **비상업 라이선스 폰트 교체 · 구매 비용** 포함 ([리소스](designer_Resources.md)) |
 | 스토어 · 유통 | 채널에 따라 ([F-01](common_needFix.md)) |
 | 서버 | 없음 (최고 기록은 기기) · 주간 랭킹은 보류 |
 

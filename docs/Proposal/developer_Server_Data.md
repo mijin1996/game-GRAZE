@@ -1,0 +1,43 @@
+# 서버 · 데이터 연동 — GRAZE
+
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planner_Concept.md) · [시스템](planner_System.md) · [전투·개체](planner_Combat_Entity.md) · [레벨 디자인](designer_LevelDesign.md) · [밸런스](planner_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planner_Requirements.md) · [Business Model](planner_Monetization.md) · **서버·데이터** · [리소스](designer_Resources.md) · [로그·지표](planner_Analytics.md) · [QA·출시](tester_Release.md) · [라이브 운영](operator_LiveOps.md) · [사업화·법무](owner_Legal.md) · [needFix](common_needFix.md)
+
+> **문서 정보**
+
+| 문서 번호 | 버전 | 상태 | 책임자 | 협업 | 최종 수정 | 관련 문서 |
+|---|---|---|---|---|---|---|
+| `D08-SERVER` | v1.1 | `Draft` | 서버 개발자 | 클라이언트 개발자 | 2026-11-23 | [시스템](planner_System.md) · [Business Model](planner_Monetization.md) |
+
+**변경 이력**
+
+| 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
+|---|---|---|---|---|---|
+
+---
+
+## 1. 목적
+**어떤 데이터를 어디에 저장하고, 무엇을 서버가 판정할지** 정하는 문서임.
+
+## 2. 지금 저장하는 것 (코드 기준)
+| 키 | 타입 | 저장하는 곳 | 내용 |
+|---|---|---|---|
+| `BestTime` | float | `GameManager` | 최고 생존 시간 (표시는 정수로 잘림 → [S-07](common_needFix.md)) |
+
+서버는 없음.
+
+## 3. 저장 위치 · 판정 주체 (제안)
+| 데이터 | 저장 위치 | 판정 주체 | 이유 |
+|---|---|---|---|
+| 최고 생존 시간 · 최고 GRAZE 점수 | 기기 | 클라 | 개인 기록(타 사용자 비공개) |
+| 오늘의 탄막 기록 | 기기 | 클라 | 날짜 시드는 **기기 날짜**를 쓰면 시계를 돌려 같은 판을 반복할 수 있음 → 개인 기록(타 사용자 비공개)이면 허용, 랭킹을 만들면 서버 시간 |
+| 광고 제거 구매 | 스토어 구매 기록 | 스토어 | 재설치 시 복원 |
+| 주간 랭킹 (보류) | 서버 | **서버 검증** | 기록 게임은 위조가 쉬움 → 판 시간 · 입력 로그 검증 필요 |
+
+> 랭킹은 보류([REQ_201](planner_Requirements.md))라 1차 출시는 서버 없이 감. 랭킹을 만들면 Google Play 게임즈 · Game Center 리더보드가 가장 가벼운 선택지임 → [F-04](common_needFix.md#8-정할-것)
+
+## 4. 저장 규칙
+| 규칙 | 내용 |
+|---|---|
+| 저장 시점 | 게임오버 직후 `PlayerPrefs.Save()` (앱이 바로 꺼져도 남게) |
+| 키 이름 | `GRAZE_BestTime` · `GRAZE_BestScore`처럼 게임 이름을 앞에 (다른 키와 섞이지 않게) |
+| 값 검사 | 불러온 값이 음수 · 비정상(예: 10,000초 이상)이면 0으로 |

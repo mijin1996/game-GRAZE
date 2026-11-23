@@ -1,19 +1,22 @@
 # QA · 출시 체크리스트 — GRAZE
 
-> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · **QA·출시** · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planner_Concept.md) · [시스템](planner_System.md) · [전투·개체](planner_Combat_Entity.md) · [레벨 디자인](designer_LevelDesign.md) · [밸런스](planner_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planner_Requirements.md) · [Business Model](planner_Monetization.md) · [서버·데이터](developer_Server_Data.md) · [리소스](designer_Resources.md) · [로그·지표](planner_Analytics.md) · **QA·출시** · [라이브 운영](operator_LiveOps.md) · [사업화·법무](owner_Legal.md) · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D11-QA` · 버전 v1.0 · 상태 `Draft` · 담당 QA · 최종 수정 2026-11-21 · 관련 문서 [시스템](planning_System.md) · [사업화·법무](owner_Business_Legal.md)
+> **문서 정보**
+
+| 문서 번호 | 버전 | 상태 | 책임자 | 협업 | 최종 수정 | 관련 문서 |
+|---|---|---|---|---|---|---|
+| `D11-QA` | v1.1 | `Draft` | QA 테스터 | 클라이언트 개발자 | 2026-11-23 | [시스템](planner_System.md) · [사업화·법무](owner_Legal.md) |
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | — | QA | — |
 
 ---
 
 ## 1. 목적
-**출시해도 되는 상태인지** 판정하는 문서예요.
+**출시해도 되는 상태인지** 판정하는 문서임.
 
 ## 2. 버그 등급
 | 등급 | 기준 | 출시 조건 |
@@ -31,9 +34,9 @@
 | `TC_004` | 23.47초 생존 | "23.4초" 표시 · 저장 | [S-07](common_needFix.md) | 치명 |
 | `TC_005` | 플레이 중 홈 버튼 → 복귀 | 일시정지 상태 | [S-08](common_needFix.md) | 높음 |
 | `TC_006` | 높은 지형에서 점프 후 착지 | 지형 위에 선다 | [S-03](common_needFix.md) | 보통 |
-| `TC_007` | 총알이 몸 옆을 스침 | GRAZE +1, 생존 시간 그대로 | [REQ_104](planning_Requirements.md) | 높음 |
+| `TC_007` | 총알이 몸 옆을 스침 | GRAZE +1, 생존 시간 그대로 | [REQ_104](planner_Requirements.md) | 높음 |
 | `TC_008` | 화면 밖 몬스터 발사 | 가장자리 화살표 표시 | [S-19](common_needFix.md) | 높음 |
-| `TC_009` | 최고 기록 판 직후 | 전면 광고 건너뜀 | [Business Model](planning_Monetization.md) §3 | 보통 |
+| `TC_009` | 최고 기록 판 직후 | 전면 광고 건너뜀 | [Business Model](planner_Monetization.md) §3 | 보통 |
 | `TC_010` | `Music` 오브젝트 이름 바꾸고 실행 | 오류 없음 | [S-06](common_needFix.md) | 보통 |
 | `TC_011` | 출시 빌드 폰트 확인 | Glue Gun · arial 없음 (또는 상업 라이선스 보관) | [F-03](common_needFix.md) | 치명 |
 
@@ -52,9 +55,9 @@
 | 등급분류 설문 (총알 · 몬스터 표현) | 대기 |
 | 데이터 보안 · 개인정보 라벨 (광고 SDK 기준) | 대기 |
 | 개인정보처리방침 URL | 대기 |
-| 라이선스 고지 화면 | 대기 ([REQ_114](planning_Requirements.md)) |
+| 라이선스 고지 화면 | 대기 ([REQ_114](planner_Requirements.md)) |
 
 ## 6. 출시 판정
 - [ ] 치명 버그 0
-- [ ] [리소스](design_Resources.md) §2 상업 불가 리소스 0
-- [ ] [사업화 · 법무](owner_Business_Legal.md) 전 항목 완료
+- [ ] [리소스](designer_Resources.md) §2 상업 불가 리소스 0
+- [ ] [사업화 · 법무](owner_Legal.md) 전 항목 완료

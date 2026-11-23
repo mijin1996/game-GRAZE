@@ -1,27 +1,30 @@
 # Business Model — GRAZE
 
-> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · **Business Model** · [서버·데이터](dev_Server_Data.md) · [리소스](design_Resources.md) · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planner_Concept.md) · [시스템](planner_System.md) · [전투·개체](planner_Combat_Entity.md) · [레벨 디자인](designer_LevelDesign.md) · [밸런스](planner_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planner_Requirements.md) · **Business Model** · [서버·데이터](developer_Server_Data.md) · [리소스](designer_Resources.md) · [로그·지표](planner_Analytics.md) · [QA·출시](tester_Release.md) · [라이브 운영](operator_LiveOps.md) · [사업화·법무](owner_Legal.md) · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D07-BM` · 버전 v1.0 · 상태 `Draft` · 담당 기획자 · 대표 · 최종 수정 2026-11-21 · 관련 문서 [밸런스](planning_Balance.md) · [서버·데이터](dev_Server_Data.md)
+> **문서 정보**
+
+| 문서 번호 | 버전 | 상태 | 책임자 | 협업 | 최종 수정 | 관련 문서 |
+|---|---|---|---|---|---|---|
+| `D07-BM` | v1.1 | `Draft` | 기획자 | 대표 (승인) | 2026-11-23 | [밸런스](planner_Balance.md) · [서버·데이터](developer_Server_Data.md) |
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | — | 기획자 | — |
 
 ---
 
 ## 1. 목적
-**어떻게 돈을 벌지** 정하는 문서예요.
-> 지금 구현: 수익화 없음. 게임 안 재화도 없어요 (생존 시간 · 최고 기록만).
+**어떻게 돈을 벌지** 정하는 문서임.
+> 지금 구현: 수익화 없음. 게임 안 재화도 없음 (생존 시간 · 최고 기록만).
 
 ## 2. Business Model 구조
 | 항목 | 결정 (제안) | 이유 |
 |---|---|---|
 | 주 수익원 | **광고** (전면 · 보상형) | 1분 판 · 잦은 재시작, 타깃이 광고형 캐주얼 유저 |
 | 보조 | **광고 제거** 인앱결제 1종 | 기록 경쟁 유저는 흐름이 끊기는 걸 싫어함 |
-| 넣지 않는 것 | 이어하기(부활) · 재화 판매 · 가챠 | **기록의 공정성** — 광고로 부활하면 "실제로 몇 초 버텼나"가 흐려져요 (needFix §7 결정과 같은 이유) |
+| 넣지 않는 것 | 이어하기(부활) · 재화 판매 · 가챠 | **기록의 공정성** — 광고로 부활하면 "실제로 몇 초 버텼나"가 흐려짐 (needFix §7 결정과 같은 이유) |
 
 ## 3. 광고 지면
 | 지면 ID | 종류 | 위치 | 규칙 |
@@ -30,7 +33,7 @@
 | `AD_DAILY_RETRY` | 보상형 | 오늘의 탄막 결과 화면 | 오늘의 탄막 추가 도전 1회 (하루 최대 2회) |
 | `AD_GRAZE_REPLAY` | 보상형 (선택) | 결과 화면 | 이번 판 하이라이트 다시 보기 — 기록에 영향 없음 | 
 
-> 1분 게임에서 전면 광고를 판마다 넣으면 광고 시간이 플레이 시간과 비슷해져요. 5판(약 5분)에 1번을 출발점으로 두고 [로그](planning_Analytics.md)로 조정해요.
+> 1분 게임에서 전면 광고를 판마다 넣으면 광고 시간이 플레이 시간과 비슷해짐. 5판(약 5분)에 1번을 출발점으로 두고 [로그](planner_Analytics.md)로 조정 필요.
 
 ## 4. 상품
 | 상품 ID | 이름 | 가격 | 구성 | 구매 제한 |
@@ -45,7 +48,7 @@
   광고 제거 : 하루 구매 0.3% (3명) × ₩2,500 × (1 − 0.15)                = ₩6,375
   합계 약 ₩13,000 / 일 → 약 ₩39만 / 월
 ```
-> eCPM · 구매율은 가정이에요. 스토어 수수료는 소규모 개발자 15%로 가정했어요.
+> eCPM · 구매율은 가정임. 스토어 수수료는 소규모 개발자 15%로 가정했음.
 
 ## 6. 예외 처리
 | 상황 | 처리 |
@@ -59,5 +62,5 @@
 | 항목 | 상태 |
 |---|---|
 | 확률형 아이템 | 없음 → 해당 없음 |
-| 광고 SDK 개인정보 표기 | 확인 필요 ([사업화 · 법무](owner_Business_Legal.md)) |
+| 광고 SDK 개인정보 표기 | 확인 필요 ([사업화 · 법무](owner_Legal.md)) |
 | 청약철회 안내 (광고 제거) | 구매 화면에 표시 |

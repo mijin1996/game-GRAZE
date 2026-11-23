@@ -1,20 +1,23 @@
 # 리소스 (아트 · 사운드) 명세 — GRAZE
 
-> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planning_Concept.md) · [시스템](planning_System.md) · [전투·개체](planning_Combat_Entity.md) · [레벨 디자인](planning_LevelDesign.md) · [밸런스](planning_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planning_Requirements.md) · [Business Model](planning_Monetization.md) · [서버·데이터](dev_Server_Data.md) · **리소스** · [로그·지표](planning_Analytics.md) · [QA·출시](qa_QA_Release.md) · [라이브 운영](ops_LiveOps.md) · [사업화·법무](owner_Business_Legal.md) · [needFix](common_needFix.md)
+> 문서 세트: [목차](common_Index.md) · 기획: [컨셉](planner_Concept.md) · [시스템](planner_System.md) · [전투·개체](planner_Combat_Entity.md) · [레벨 디자인](designer_LevelDesign.md) · [밸런스](planner_Balance.md) · 사업·운영: [사업 검토](owner_Business.md) · [요구사항·로드맵](planner_Requirements.md) · [Business Model](planner_Monetization.md) · [서버·데이터](developer_Server_Data.md) · **리소스** · [로그·지표](planner_Analytics.md) · [QA·출시](tester_Release.md) · [라이브 운영](operator_LiveOps.md) · [사업화·법무](owner_Legal.md) · [needFix](common_needFix.md)
 
-> **문서 정보** · 문서 번호 `D09-RES` · 버전 v1.0 · 상태 `Draft` · 담당 아티스트 · 사운드 디자이너 · 최종 수정 2026-11-21 · 관련 문서 [전투·개체](planning_Combat_Entity.md) · [사업화·법무](owner_Business_Legal.md)
+> **문서 정보**
+
+| 문서 번호 | 버전 | 상태 | 책임자 | 협업 | 최종 수정 | 관련 문서 |
+|---|---|---|---|---|---|---|
+| `D09-RES` | v1.1 | `Draft` | 아트 디자이너 | 사운드 디자이너 | 2026-11-23 | [전투·개체](planner_Combat_Entity.md) · [사업화·법무](owner_Legal.md) |
 
 **변경 이력**
 
 | 버전 | 날짜 | 변경 내용 | 사유 | 결정자 | 영향 범위 |
 |---|---|---|---|---|---|
-| v1.0 | 2026-11-21 | 최초 작성 | — | 아티스트 | — |
 
 ---
 
 ## 1. 목적
-게임에 들어가는 **모든 그림 · 모델 · 소리 · 폰트의 목록 · 라이선스**를 관리해요.
-> **규칙:** 라이선스가 `확인됨`이 아닌 리소스가 있으면 출시하지 않아요.
+게임에 들어가는 **모든 그림 · 모델 · 소리 · 폰트의 목록 · 라이선스**를 관리함.
+> **규칙:** 라이선스가 `확인됨`이 아닌 리소스가 있으면 출시하지 않음.
 
 ## 2. ⚠️ 먼저 고칠 것 — 상업 출시 불가 리소스
 | 리소스 | 위치 | 문제 | 대응 |
@@ -22,7 +25,7 @@
 | **Glue Gun 폰트** (`Glue Gun.otf`) | `Fonts/` · `Balls/[UIFabrica]TrollNest_Free_v01/05.FONT/` | 동봉 라이선스가 **`FSLA_NonCommercial_License`** (비상업 전용) — 광고 · 결제가 있는 게임은 상업 이용 | 상업 라이선스 구매(동봉 "Get Commercial License" 링크) 또는 OFL 폰트로 교체 |
 | **arial.ttf** | `Ultimate 10 Plus Shaders/` | Arial은 Microsoft 소유 폰트 — 게임에 넣어 배포하면 안 될 수 있음 | 셰이더 데모용이면 삭제, 쓰면 교체 |
 | `GSHYEJAROUN-Bold.otf` | `Fonts/` | 라이선스 파일 없음 | 출처 · 상업 이용 가능 여부 확인 |
-| `KakaoTalk_20261026_*.png` | `Images/` | 메신저로 받은 이미지 — 누가 만들었는지 기록 없음 | 제작자 · 사용 허락 기록 |
+| `KakaoTalk_20261026_*.png` | `Images/` | 메신저로 받은 이미지 — 제작자 기록 없음 | 제작자 · 사용 허락 기록 |
 
 → [F-03](common_needFix.md#8-정할-것)
 
@@ -49,7 +52,7 @@
 | `SFX_RPG_*` | `Clips/RPG_Essentials_Free/` | 효과음 | RPG Essentials Free 팩 | ⚠️ |
 | `SFX_STEP_*` · `SFX_JUMP` · `SFX_LAND` · `SFX_DIE` | `Sounds/` · `Sounds/Player/` | 발소리 · 점프 · 사망 | 미확인 | ⚠️ |
 
-> 같은 소리가 `Clips/`와 `Sounds/`에 두 벌 있어요 (Footstep · Jump · PlayerDie). 정리 → [F-07](common_needFix.md)
+> 같은 소리가 `Clips/`와 `Sounds/`에 두 벌 있음 (Footstep · Jump · PlayerDie). 정리 → [F-07](common_needFix.md)
 
 ## 4. 새로 필요한 리소스
 | 리소스 ID | 종류 | 관련 | 상태 |
@@ -59,4 +62,4 @@
 | `UI_EDGE_ARROW` | 화면 밖 몬스터 방향 화살표 | [S-19](common_needFix.md) | 대기 |
 | `UI_RESULT` | 결과 화면 (이번 · 최고 · 다음 목표) | [S-20](common_needFix.md) | 대기 |
 | `FONT_MAIN_NEW` | Glue Gun 대체 폰트 (상업 가능 · 한글 포함) | §2 | 대기 |
-| `STORE_*` | 스토어 아이콘 · 스크린샷 | [QA](qa_QA_Release.md) | 대기 |
+| `STORE_*` | 스토어 아이콘 · 스크린샷 | [QA](tester_Release.md) | 대기 |
